@@ -130,7 +130,7 @@ class PyMongoCursorInstrumentation(AbstractInstrumentedModule):
             if span.context:
                 address = getattr(instance, 'address', None)
                 if address:
-                    host, port = instance.address
+                    host, port = address
                     span.context["destination"]["address"] = host
                     span.context["destination"]["port"] = port
             else:
